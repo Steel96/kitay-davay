@@ -1,0 +1,130 @@
+body {
+  font-family: Montserrat;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 14px;
+  background-color: none;
+}
+.headerBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.logo {
+  object-fit: contain;
+  width: 110px;
+  height: 80px;
+}
+.headerBtn button {
+  all: unset;
+  cursor: pointer;
+}
+.contactBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0085d1;
+  border: none;
+  border-radius: 50px;
+  font-size: 12px;
+  color: white;
+  width: 130px;
+  height: 35px;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 80px;
+  box-sizing: content-box;
+}
+.them {
+  object-fit: contain;
+  width: 24px;
+  height: 24px;
+}
+.phoneCall {
+  display: flex;
+  align-items: center;
+  object-fit: contain;
+  width: 25px;
+  height: 25px;
+}
+.number {
+  display: flex;
+  flex-direction: row;
+  width: 171px;
+  height: 35px;
+  align-items: center;
+  gap: 16px;
+  background-color: #f2f2f2;
+  border-radius: 50px;
+  justify-content: center;
+}
+.navRight {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+.main {
+  display: flex;
+  background: linear-gradient(#008bdb, #005f95);
+  height: 400px;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0 80;
+  gap: 30px;
+}
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.mainText1 {
+  display: flex;
+  font-size: 64px;
+  font-style: bold;
+  font-weight: 700;
+  object-fit: contain;
+  line-height: 100%;
+  letter-spacing: 0%;
+  padding-top: 60px;
+}
+.mainText2 {
+  display: flex;
+  font-size: 14px;
+  object-fit: contain;
+}
+.moredetailsBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffffbf;
+  width: 160px;
+  height: 35px;
+  border-radius: none;
+}
+.logisticImg {
+  width: 612px;
+  height: 612px;
+  object-fit: cover;
+}
+.prices {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1280px;
+  height: 250px;
+}
+.priceText {
+  font-size: 48px;
+  color: #f2bd00;
+  justify-content: flex-start;
+}
