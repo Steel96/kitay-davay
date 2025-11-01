@@ -6,6 +6,7 @@ export default function Prices() {
       </span>
       <div className="airDelivery">
         <img src="img/plane.svg" alt="" />
+        {/* как компонент, вставляй код свг */}
         <div className="textAirDelivery">
           <span>Авиаперевозка</span>
           <span>Вес груза от 30 кг</span>
@@ -15,6 +16,7 @@ export default function Prices() {
       </div>
       <div className="carDelivery">
         <img src="img/roadDelivery.svg" alt="" />
+         {/* как компонент, вставляй код свг */}
         <div className="textCarDelivery">
           <span>Автоперевозка</span>
           <span>Вес груза от 100 к</span>
