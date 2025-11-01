@@ -31,6 +31,7 @@ body {
   color: white;
   width: 130px;
   height: 35px;
+  cursor: pointer;
 }
 * {
   margin: 0;
@@ -47,6 +48,7 @@ body {
   object-fit: contain;
   width: 24px;
   height: 24px;
+  cursor: pointer;
 }
 .phoneCall {
   display: flex;
@@ -65,6 +67,7 @@ body {
   background-color: #f2f2f2;
   border-radius: 50px;
   justify-content: center;
+  cursor: pointer;
 }
 .navRight {
   display: flex;
@@ -114,17 +117,65 @@ body {
 .logisticImg {
   width: 612px;
   height: 612px;
-  object-fit: cover;
 }
 .prices {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 1280px;
   height: 250px;
+  padding: 0 80;
+  margin-top: 60px;
 }
 .priceText {
   font-size: 48px;
   color: #f2bd00;
   justify-content: flex-start;
+  align-items: center;
+  padding: 77 0;
+}
+.airDelivery {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  background: #0085d133;
+  width: 400px;
+  height: 250px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 50px rgba(0, 133, 209, 0.35);
+  margin-left: 233px;
+  flex-direction: column;
+  font-weight: 400;
+  font-size: 16px;
+}
+.airDelivery img {
+  width: 64px;
+  height: 64px;
+  margin-top: 20px;
+}
+.carDelivery {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  background: #0085d133;
+  width: 400px;
+  height: 250px;
+  border-radius: 20px;
+  margin-left: 50px;
+  box-shadow: 0px 0px 50px rgba(0, 133, 209, 0.35);
+  flex-direction: column;
+  font-weight: 400;
+  font-size: 16px;
+}
+.carDelivery img {
+  width: 64px;
+  height: 64px;
+  margin-top: 20px;
+}
+.textAirDelivery {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+.textCarDelivery {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
 }
