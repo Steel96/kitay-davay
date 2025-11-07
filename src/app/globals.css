@@ -9,14 +9,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 15px;
+  gap: 40px;
+  color: black;
 }
-.logo {
-  object-fit: contain;
-  width: 110px;
-  height: 80px;
-}
-.headerBtn button {
+.headerBtn a {
   all: unset;
   cursor: pointer;
 }
@@ -45,9 +41,6 @@ body {
   box-sizing: content-box;
 }
 .them {
-  object-fit: contain;
-  width: 24px;
-  height: 24px;
   cursor: pointer;
 }
 .phoneCall {
@@ -66,8 +59,10 @@ body {
   gap: 16px;
   background-color: #f2f2f2;
   border-radius: 50px;
-  justify-content: center;
   cursor: pointer;
+}
+.number span {
+  margin-left: 20px;
 }
 .navRight {
   display: flex;
@@ -82,15 +77,14 @@ body {
   height: 400px;
   flex-direction: row;
   align-items: flex-start;
-  padding: 0 80;
-  gap: 30px;
+  padding: 0 80px;
 }
 .mainContent {
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
-.mainText1 {
+.mainHeader {
   display: flex;
   font-size: 64px;
   font-style: bold;
@@ -100,7 +94,7 @@ body {
   letter-spacing: 0%;
   padding-top: 60px;
 }
-.mainText2 {
+.mainText {
   display: flex;
   font-size: 14px;
   object-fit: contain;
@@ -112,11 +106,22 @@ body {
   background: #ffffffbf;
   width: 160px;
   height: 35px;
-  border-radius: none;
+  border-radius: 10px;
+  border-width: 0.25px 2px;
+  border-color: black;
+  border-style: solid;
 }
 .logisticImg {
   width: 612px;
   height: 612px;
+  margin-top: -106px;
+  overflow: hidden;
+}
+.logisticWrapper {
+  position: relative;
+  width: 612px;
+  height: 612px;
+  overflow: hidden;
 }
 .prices {
   display: flex;
@@ -144,6 +149,15 @@ body {
   flex-direction: column;
   font-weight: 400;
   font-size: 16px;
+}
+.textAvia {
+  display: flex;
+  font-size: 24px;
+}
+.context {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .airDelivery img {
   width: 64px;
@@ -178,4 +192,25 @@ body {
   display: flex;
   gap: 10px;
   flex-direction: column;
+}
+.stages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.stageText {
+  font-size: 48px;
+  font-weight: 600;
+  font-style: SemiBold;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+.applicationCont {
+  display: flex;
+  width: 500px;
+  height: 250px;
+  border-radius: 20px;
+  border-style: solid;
+  border-color: #999999;
+  border-width: 1px, 2px, 1px, 2px;
 }

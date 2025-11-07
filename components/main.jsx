@@ -1,22 +1,27 @@
+import Image from "next/image";
+
 export default function Main() {
   return (
     <div className="main">
       <div className="mainContent">
-        <span className="mainText1">
-          {/* старайся избегать цифр 1/2 в классах, лучше бы написал mainHeader и mainText */}
+        <span className="mainHeader">
           Как сэкономить
           <br />
           на доставке из
           <br />
           Китая
         </span>
-        <span className="mainText2">Без посредников</span>
-        <button className="styles.moredetailsBtn">ПОДРОБНЕЕ</button>
-        {/* класс неправильно написан, не должно быть точек */}
+        <span className="mainText">Без посредников</span>
+        <button className="moredetailsBtn">ПОДРОБНЕЕ</button>
       </div>
-      <div className="logisticImg">
-        <img src="img/logistic.png" alt="" />
-         {/* нету альта */}
+      <div className="logisticWrapper">
+        <Image
+          className="logisticImg"
+          src="/img/logistic.png"
+          alt="logistic"
+          fill
+          style={{ objectFit: "cover", objectPosition: "cover top" }}
+        />
       </div>
     </div>
   );
