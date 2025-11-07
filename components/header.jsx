@@ -4,6 +4,7 @@ export default function Header() {
   return (
     <div className="head">
       <Image src="/img/logo.svg" alt="logo" width={110} height={80} />
+      {/* КОМПОНЕНТОМ, как хедер! без этого не приму. так с каждой иконкой (нужен <svg>!) */}
       <div className="headerBtn">
         <a href="">Почему мы?</a>
         <a href="">Преимущества</a>

@@ -20,7 +20,6 @@ export default function Main() {
           src="/img/logistic.png"
           alt="logistic"
           fill
-          style={{ objectFit: "cover", objectPosition: "cover top" }}
         />
       </div>
     </div>
