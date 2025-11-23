@@ -19,7 +19,8 @@ export default function Main() {
           className="logisticImg"
           src="/img/logistic.png"
           alt="logistic"
-          fill
+          width={1500}
+          height={1500}
         />
       </div>
     </div>

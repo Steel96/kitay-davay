@@ -1,10 +1,12 @@
 import Image from "next/image";
+import LogoIcon from "../public/svg/logo";
+import ThemIcon from "../public/svg/them";
+import PhoneCall from "../public/svg/phoneCall";
 
 export default function Header() {
   return (
     <div className="head">
-      <Image src="/img/logo.svg" alt="logo" width={110} height={80} />
-      {/* КОМПОНЕНТОМ, как хедер! без этого не приму. так с каждой иконкой (нужен <svg>!) */}
+      <LogoIcon />
       <div className="headerBtn">
         <a href="">Почему мы?</a>
         <a href="">Преимущества</a>
@@ -12,22 +14,10 @@ export default function Header() {
         <a href="">Контакты</a>
       </div>
       <div className="navRight">
-        <Image
-          className="them"
-          src="/img/them.svg"
-          alt="them"
-          width={24}
-          height={24}
-        />
+        <ThemIcon />
         <div className="number">
           <span>8 (925) 288-75-82</span>
-          <Image
-            className="phoneCall"
-            src="/img/phonecall.svg"
-            alt="phonecall"
-            width={25}
-            height={25}
-          />
+          <PhoneCall />
         </div>
         <button className="contactBtn">ПЕРЕЗВОНИТЬ</button>
       </div>

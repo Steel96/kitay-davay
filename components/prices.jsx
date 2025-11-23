@@ -1,4 +1,6 @@
 import Image from "next/image";
+import PlaneIcon from "../public/svg/plane";
+import Delivery from "../public/svg/Delivery";
 
 export default function Prices() {
   return (
@@ -7,7 +9,7 @@ export default function Prices() {
         Что по <br /> ценам?
       </span>
       <div className="airDelivery">
-        <Image src="/img/plane.svg" alt="plane" width={64} height={64} />
+        <PlaneIcon />
         <div className="textAirDelivery">
           <span className="textAvia">Авиаперевозка</span>
           <span className="context">Вес груза от 30 кг</span>
@@ -16,12 +18,7 @@ export default function Prices() {
         </div>
       </div>
       <div className="carDelivery">
-        <Image
-          src="/img/roadDelivery.svg"
-          alt="delivery"
-          width={64}
-          height={64}
-        />
+        <Delivery />
         <div className="textCarDelivery">
           <span className="textAvia">Автоперевозка</span>
           <span className="context">Вес груза от 100 кг</span>
