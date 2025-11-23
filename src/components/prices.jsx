@@ -1,6 +1,5 @@
-import Image from "next/image";
-import PlaneIcon from "../public/svg/plane";
-import Delivery from "../public/svg/Delivery";
+import PlaneIcon from "../../public/svg/plane";
+import Delivery from "../../public/svg/Delivery";
 
 export default function Prices() {
   return (

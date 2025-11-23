@@ -1,17 +1,17 @@
-import Image from "next/image";
-import LogoIcon from "../public/svg/logo";
-import ThemIcon from "../public/svg/them";
-import PhoneCall from "../public/svg/phoneCall";
+import LogoIcon from "../../public/svg/logo";
+import ThemIcon from "../../public/svg/them";
+import PhoneCall from "../../public/svg/phoneCall";
+import Link from "next/link";
 
 export default function Header() {
   return (
     <div className="head">
       <LogoIcon />
       <div className="headerBtn">
-        <a href="">Почему мы?</a>
-        <a href="">Преимущества</a>
-        <a href="">Расчет</a>
-        <a href="">Контакты</a>
+        <Link href="">Почему мы?</Link>
+        <Link href="">Преимущества</Link>
+        <Link href="">Расчет</Link>
+        <Link href="">Контакты</Link>
       </div>
       <div className="navRight">
         <ThemIcon />
