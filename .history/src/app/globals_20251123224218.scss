@@ -160,9 +160,8 @@ body {
   display: flex;
   width: 1280px;
   height: 250px;
-  padding: 0 80;
+  padding: 0 80px;
   margin-top: 60px;
-  gap: 50px;
   justify-content: space-between;
 }
 .priceText {
@@ -171,6 +170,11 @@ body {
   justify-content: flex-start;
   align-items: center;
   padding: 77 0;
+}
+.deliveryCards {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
 }
 .airDelivery {
   display: flex;
@@ -184,7 +188,7 @@ body {
   flex-direction: column;
   font-weight: 400;
   font-size: 16px;
-  margin-left: 83px;
+  padding: 20px 0 0 0;
 }
 .textAvia {
   display: flex;
@@ -208,14 +212,15 @@ body {
   display: flex;
   flex-shrink: 0;
   align-items: center;
-  background: #0085d133;
+  background-color: rgba(242, 190, 0, 0.2);
   width: 400px;
   height: 250px;
   border-radius: 20px;
-  box-shadow: 0px 0px 50px rgba(0, 133, 209, 0.35);
+  box-shadow: 0px 0px 50px rgba(242, 189, 0, 0.35);
   flex-direction: column;
   font-weight: 400;
   font-size: 16px;
+  padding: 20px 0 0 0;
 }
 .carDelivery img {
   width: 64px;
@@ -445,8 +450,10 @@ body {
 .benefitCont {
   margin-top: 120px;
   padding: 0 80px;
-  display: grid;
   justify-content: space-between;
+}
+.benefitCards {
+  display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 40px;
 }
@@ -992,7 +999,7 @@ body {
   border-width: 0.25px 2px;
   border-color: black;
   border-style: solid;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 600;
   position: absolute;
 }
