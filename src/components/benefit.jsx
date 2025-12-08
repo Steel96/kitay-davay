@@ -1,6 +1,6 @@
 export default function Benefit() {
   return (
-    <div className="benefitCont">
+    <div id="why-us" className="benefitCont">
       <h1 className="benefitText">Почему выгодно работать с нами?</h1>
       <div className="benefitCards">
         <div className="whyUsCard1">

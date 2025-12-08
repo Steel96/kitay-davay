@@ -10,9 +10,9 @@ export default function ReviewButton() {
 
   useEffect(() => {
     const updateHeight = () => {
-      if (window.innerWidth <= 800) setSize(10);
-      else if (window.innerWidth <= 1050) setSize(-25);
-      else setSize(-40);
+      if (window.innerWidth <= 800) setSize(0.86);
+      else if (window.innerWidth <= 1050) setSize(-2.14);
+      else setSize(-3.42);
     };
 
     updateHeight();
@@ -34,7 +34,7 @@ export default function ReviewButton() {
         onMouseLeave={() => setIsHovered(false)}
       >
         <span className="arrowIcon">
-          <Arrow margin={`0px ${size}px 0px 10px`} />
+          <Arrow margin={`0 ${size}rem 0 0.86rem`} />
         </span>
       </button>
 
@@ -44,7 +44,7 @@ export default function ReviewButton() {
         onMouseLeave={() => setIsHovered2(false)}
       >
         <span className="arrowIcon">
-          <Arrow margin={`0px ${size}px 0px 10px`} />
+          <Arrow margin={`0 ${size}rem 0 0.86rem`} />
         </span>
       </button>
     </div>

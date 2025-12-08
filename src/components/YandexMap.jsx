@@ -8,10 +8,10 @@ export default function YandexMap() {
         href="https://yandex.ru/maps/213/moscow/?utm_medium=mapframe&utm_source=maps"
         style={{
           color: "#eee",
-          fontSize: "12px",
+          fontSize: "1.03rem",
           position: "absolute",
-          top: "0px",
-          left: "10px",
+          top: "0",
+          left: "0.86rem",
           zIndex: 2,
         }}
       >
@@ -21,10 +21,10 @@ export default function YandexMap() {
         href="https://yandex.ru/maps/213/moscow/house/komsomolskiy_prospekt_28/Z04YcwBpT0ADQFtvfXtzd3RrZg==/?indoorLevel=1&ll=37.579655%2C55.726883&utm_medium=mapframe&utm_source=maps&z=16.85"
         style={{
           color: "#eee",
-          fontSize: "12px",
+          fontSize: "1.03rem",
           position: "absolute",
-          top: "14px",
-          left: "10px",
+          top: "1.20rem",
+          left: "0.86rem",
           zIndex: 2,
         }}
       >

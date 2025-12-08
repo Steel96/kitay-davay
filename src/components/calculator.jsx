@@ -1,11 +1,20 @@
+"use client";
+import { useState } from "react";
+import PopUpFormCalculator from "./popUpFormCalculator";
+
 export default function Calculator() {
+  const [open, setOpen] = useState(false);
+
   return (
-    <div className="calculatorCont">
+    <div id="calculator" className="calculatorCont">
       <span className="calculatorContTextUp">Какой груз нужно перевезти?</span>
       <span className="calculatorContTextDown">
         Давайте посчитаем оптимальную доставку!
       </span>
-      <button className="calculatorContBtn">ПОСЧИТАТЬ</button>
+      <button className="calculatorContBtn" onClick={() => setOpen(true)}>
+        ПОСЧИТАТЬ
+      </button>
+      <PopUpFormCalculator isOpen={open} onClose={() => setOpen(false)} />
     </div>
   );
 }

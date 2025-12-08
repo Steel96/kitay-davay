@@ -2,7 +2,7 @@ import YandexMap from "./YandexMap";
 
 export default function ContactsMain() {
   return (
-    <div className="contactsMain">
+    <div id="contacts" className="contactsMain">
       <h1 className="contactsMainTitle">Контакты</h1>
       <div className="contactsMainContent">
         <div className="contactsMainContentLeft">
