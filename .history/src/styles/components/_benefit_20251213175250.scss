@@ -1,0 +1,126 @@
+.benefitCont {
+  margin-top: 10.27rem;
+  padding: 0 6.85rem;
+  justify-content: space-between;
+}
+
+.benefitCards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3.42rem;
+}
+
+.whyUsCard1,
+.whyUsCard2,
+.whyUsCard3,
+.whyUsCard4 {
+  display: flex;
+  width: 53.08rem;
+  height: 14.38rem;
+  border-radius: 20px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 1);
+  border-width: 0.25px 2px 0.25px 2px;
+  box-sizing: border-box;
+  background: #ffffff;
+  flex-direction: column;
+  padding: 2.57rem 2.57rem;
+  position: relative;
+}
+
+.benefitContUp {
+  display: flex;
+  justify-content: space-between;
+}
+
+.benefitContHead {
+  display: inline-block;
+  font-size: 2.05rem;
+  font-weight: 600;
+}
+
+.benefitContNum {
+  font-size: 2.74rem;
+  font-weight: 600;
+  color: rgba(153, 153, 153, 1);
+  position: absolute;
+  top: 2.57rem;
+  right: 2.57rem;
+  line-height: 2.05rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.benefitContText {
+  font-size: 1.37rem;
+  font-weight: 600;
+  line-height: 120%;
+  letter-spacing: 0%;
+  color: rgba(0, 0, 0, 1);
+  line-height: 1.37rem;
+  letter-spacing: 0;
+}
+
+.benefitText {
+  display: grid;
+  grid-column: 1 / -1;
+  font-size: 4.11rem;
+  font-weight: 600;
+  margin-bottom: 5.14rem;
+}
+@media (max-width: 375px) {
+  .benefitCont {
+    margin-top: 60px;
+    padding: 0 20px;
+  }
+  .benefitCards {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .benefitText {
+    font-size: 32px;
+    margin-top: 0;
+    margin-bottom: 30px;
+    padding: 0;
+  }
+  .whyUsCard1,
+  .whyUsCard2,
+  .whyUsCard3,
+  .whyUsCard4 {
+    gap: 10.77px;
+    padding: 20px 20px;
+    height: auto;
+    min-height: 105px;
+    width: 335px;
+    position: relative;
+  }
+  .benefitContUp {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .benefitContHead {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    width: 242px;
+  }
+
+  .benefitContNum {
+    font-size: 24px;
+    font-weight: 600;
+    color: rgba(153, 153, 153, 1);
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    line-height: 16px;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .benefitContText {
+    font-size: 10px;
+    margin: 0;
+  }
+}

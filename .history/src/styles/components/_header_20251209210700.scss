@@ -1,0 +1,245 @@
+.logo {
+  width: 9.42rem;
+  height: 6.85rem;
+  cursor: pointer;
+}
+
+.logo-line {
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+
+.logo:hover .logo-line-1 {
+  animation: slideLeft 1.2s ease-in-out infinite;
+  animation-delay: 0s;
+}
+
+.logo:hover .logo-line-2 {
+  animation: slideLeft 1.2s ease-in-out infinite;
+  animation-delay: 0.4s;
+}
+
+.logo:hover .logo-line-3 {
+  animation: slideLeft 1.2s ease-in-out infinite;
+  animation-delay: 0.8s;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+  position: fixed;
+  background: rgba(255, 255, 255, 1);
+  z-index: 10000000;
+  padding: 0 6.85rem;
+  left: 0;
+  right: 0;
+  box-sizing: border-box;
+}
+
+/* Контейнер навигации */
+.headerBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3.42rem;
+  color: black;
+}
+
+.headerBtn a {
+  all: unset;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  font-size: 1.2rem;
+  color: transparent !important; /* прячем оригинальный текст */
+  padding: 0 0.34rem;
+  line-height: normal;
+  vertical-align: middle;
+}
+
+/* Общие стили для before и after */
+.headerBtn a::before,
+.headerBtn a::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  width: 100%;
+  white-space: nowrap;
+  display: block;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    top 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+/* Нижний черный текст */
+.headerBtn a::before {
+  color: #000;
+  z-index: 1;
+}
+
+/* Верхний синий текст — изначально спрятан ниже */
+.headerBtn a::after {
+  color: #0085d1;
+  top: 150%; /* стартует ниже видимой области */
+  transform: translateY(0);
+  z-index: 2;
+}
+
+/* При ховере — черный уходит вверх, синий поднимается */
+.headerBtn a:hover::before {
+  transform: translateY(-150%);
+}
+
+.headerBtn a:hover::after {
+  top: 50%; /* возвращаем наверх */
+  transform: translateY(-50%);
+}
+
+/* === Блок справа (иконки + телефон + кнопка) === */
+.navRight {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1.28rem;
+  flex-wrap: nowrap;
+}
+
+/* ThemeIcon hover (увеличение) */
+.them {
+  width: 2.05rem;
+  height: 2.05rem;
+  cursor: pointer;
+  transition: transform 0.18s ease;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.them:hover {
+  transform: scale(1.15);
+}
+
+/* PhoneCallBtn — контейнер и иконка */
+.phoneCallBtn {
+  display: flex;
+  align-items: center;
+  gap: 1.03rem;
+  width: 12.84rem; /* фиксированная ширина */
+  height: 3rem;
+  padding: 0 0.43rem 0 1.71rem;
+  background-color: #f2f2f2;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.03rem;
+  flex-shrink: 0;
+  transition: transform 0.18s ease;
+  justify-content: space-between;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Убираем margin-ы, центрируем спан по вертикали */
+.phoneCallBtn span {
+  margin-left: 0;
+  line-height: 1;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Иконка телефона — трясётся при hover всего блока */
+.phoneCall {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.14rem;
+  height: 2.14rem;
+  flex-shrink: 0;
+}
+
+.phoneCallBtn:hover .phoneCall {
+  animation: shake 0.48s ease-in-out;
+}
+
+/* Кнопка "ПЕРЕЗВОНИТЬ" — увеличивается */
+.contactBtn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background: #0085d1;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.03rem;
+  color: white;
+  width: 11.13rem;
+  height: 3rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  flex-shrink: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+.contactBtn:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0.51rem 1.54rem rgba(0, 133, 209, 0.16);
+}
+
+/* Общие защитные правила для flex-элементов */
+.phoneCallBtn,
+.contactBtn,
+.them,
+.logo {
+  align-self: center; /* гарантируем центровку в .head */
+}
+
+/* Сброс "all: unset" не должен ломать базовые display соседних элементов,
+   поэтому если где-то остались inline-элементы — можно явно задать display */
+.headerBtn a,
+.contactBtn,
+.phoneCallBtn {
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+@media (max-width: 480px) {
+  .head {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 375px;
+    position: fixed;
+    background: rgba(255, 255, 255, 1);
+    z-index: 10000000;
+    padding: 0 20px;
+    left: 0;
+    right: 0;
+    box-sizing: border-box;
+    height: 60px;
+  }
+  .logo {
+    width: 80px;
+    height: 58.18px;
+  }
+  .contactBtn {
+    width: 110px;
+    height: 29.62px;
+    font-size: 10.15px;
+  }
+  .them {
+    width: 16px;
+    height: 16px;
+  }
+  .headerBtn {
+    display: none;
+  }
+  .phoneCallBtn {
+    display: none;
+  }
+}

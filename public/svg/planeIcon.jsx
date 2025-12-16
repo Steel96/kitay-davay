@@ -3,8 +3,6 @@ export default function PlaneIcon() {
     <svg
       className="plane"
       xmlns="http://www.w3.org/2000/svg"
-      width="84"
-      height="67"
       viewBox="0 0 84 67"
       fill="none"
     >

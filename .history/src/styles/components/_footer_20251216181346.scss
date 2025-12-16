@@ -1,0 +1,197 @@
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 6.85rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 1);
+  margin-top: 5.14rem;
+  height: 11.99rem;
+}
+
+.footerLogo {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  align-items: flex-start;
+  font-weight: 400;
+  font-size: 1.37rem;
+}
+
+.footerGroup {
+  display: flex;
+  flex-direction: row;
+  gap: 8.56164383562rem;
+  align-self: center;
+}
+
+.footerNav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.86rem;
+  align-self: center;
+}
+
+.footerNavItem {
+  all: unset;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  font-size: 1.2rem;
+  color: transparent !important;
+  line-height: normal;
+  vertical-align: middle;
+}
+
+/* Общие стили для before и after */
+.footerNavItem::before,
+.footerNavItem::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  width: 100%;
+  white-space: nowrap;
+  display: block;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    top 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+/* Нижний черный текст */
+.footerNavItem::before {
+  color: #000;
+  z-index: 1;
+}
+
+/* Верхний синий текст — изначально спрятан ниже */
+.footerNavItem::after {
+  color: #0085d1;
+  top: 150%;
+  transform: translateY(0);
+  z-index: 2;
+}
+
+/* При ховере — черный уходит вверх, синий поднимается */
+.footerNavItem:hover::before {
+  transform: translateY(-150%);
+}
+
+.footerNavItem:hover::after {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.footerInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.86rem;
+  align-self: center;
+  font-weight: 500;
+}
+
+.footerInfo span {
+  color: rgba(153, 153, 153, 1);
+}
+
+.footerInfo a {
+  all: unset;
+  cursor: pointer;
+}
+
+.footerSocialNetworks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.86rem;
+  align-self: center;
+  font-weight: 500;
+}
+
+.footerSocialNetworksIcons {
+  display: flex;
+  gap: 0.86rem;
+}
+
+.footerRight {
+  display: flex;
+  flex-direction: column;
+  gap: 0.86rem;
+  align-self: center;
+}
+
+.footerRightButtons {
+  display: flex;
+  flex-direction: row;
+  gap: 0.86rem;
+}
+
+.phoneCallBtnFooter {
+  display: flex;
+  flex-direction: row;
+  width: 11.56rem;
+  height: 3rem;
+  align-items: center;
+  background-color: #f2f2f2;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  line-height: 100%;
+  letter-spacing: 0%;
+  font-size: 1.03rem;
+  padding: 0 0.43rem 0 0.86rem;
+  justify-content: space-between;
+  text-decoration: none;
+  color: inherit;
+}
+
+.phoneCallBtnFooter:hover .phoneCall {
+  animation: shake 0.48s ease-in-out;
+}
+
+.footerInteractMini {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: rgba(0, 0, 0, 1);
+  text-decoration: none;
+  gap: 0.86rem;
+  justify-content: end;
+}
+
+.footerInteractText {
+  color: inherit;
+}
+
+.tenzorix {
+  width: 12.84rem;
+  height: 3.42rem;
+}
+@media (max-width: 375px) {
+  .footer {
+    display: flex;
+    flex-direction: column;
+    width: 335px;
+    height: 430px;
+    padding: 0 20px;
+  }
+  .footerLogoText {
+    font-weight: 400;
+    font-size: 10px;
+  }
+  .footerNav {
+    font-size: 14px;
+    gap: 10px;
+  }
+  .footerInfo {
+    font-size: 14px;
+    gap: 10px;
+  }
+  .footerGroup {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+}
