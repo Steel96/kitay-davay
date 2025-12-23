@@ -19,7 +19,7 @@
 @import "../styles/components/popUpFormCalculator";
 
 html {
-  font-size: 11.68px;
+  font-size: clamp(0px, 0.75vw, 11.68px);
   overflow-x: hidden;
   overflow-y: auto;
 }
