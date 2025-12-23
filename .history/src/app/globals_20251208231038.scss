@@ -1,9 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 
 $gray: rgba(153, 153, 153, 1);
-html {
-  font-size: clamp(0px, 0.75vw, 11.68px);
-}
 
 :root {
   font-family: "Montserrat";
@@ -12,7 +9,7 @@ body {
   font-family: inherit;
   font-weight: 600;
   font-style: SemiBold;
-  font-size: 1.20rem;
+  font-size: 1.2rem;
   background-color: rgba(242, 242, 242, 1);
   margin: 0;
 }
@@ -87,7 +84,7 @@ body {
   position: relative;
   display: inline-block;
   overflow: hidden;
-  font-size: 1.20rem;
+  font-size: 1.2rem;
   color: transparent !important; /* прячем оригинальный текст */
   padding: 0 0.34rem;
   line-height: normal;
@@ -165,7 +162,7 @@ body {
   align-items: center;
   gap: 1.03rem;
   width: 12.84rem; /* фиксированная ширина */
-  height: 3.00rem;
+  height: 3rem;
   padding: 0 0.43rem 0 1.71rem;
   background-color: #f2f2f2;
   border-radius: 50px;
@@ -232,7 +229,7 @@ body {
   font-size: 1.03rem;
   color: white;
   width: 11.13rem;
-  height: 3.00rem;
+  height: 3rem;
   cursor: pointer;
   font-weight: 600;
   transition: transform 0.18s ease, box-shadow 0.18s ease;
@@ -289,12 +286,12 @@ body {
   line-height: 100%;
   letter-spacing: 0%;
   padding-top: 5.14rem;
-  width: 50.00rem;
+  width: 50rem;
   font-family: "Montserrat";
 }
 .mainText {
   display: flex;
-  font-size: 1.20rem;
+  font-size: 1.2rem;
   object-fit: contain;
   transition: opacity 0.3s ease-in-out;
   font-weight: 500;
@@ -312,13 +309,13 @@ body {
   justify-content: center;
   align-items: center;
   background: #ffffffbf;
-  width: 13.70rem;
-  height: 3.00rem;
+  width: 13.7rem;
+  height: 3rem;
   border-radius: 10px;
   border-width: 0.25px 2px;
   border-color: black;
   border-style: solid;
-  font-size: 1.20rem;
+  font-size: 1.2rem;
   font-weight: 600;
   cursor: pointer;
   position: relative;
@@ -343,15 +340,15 @@ body {
 }
 .logisticImg {
   position: absolute;
-  width: 52.40rem;
-  height: 52.40rem;
+  width: 52.4rem;
+  height: 52.4rem;
   margin-top: -9.08rem;
   overflow: hidden;
 }
 .logisticWrapper {
   position: relative;
-  width: 52.40rem;
-  height: 52.40rem;
+  width: 52.4rem;
+  height: 52.4rem;
   overflow: hidden;
 }
 .prices {
@@ -493,7 +490,7 @@ body {
   position: absolute;
   width: 5.14rem;
   height: 5.14rem;
-  font-size: 2.40rem;
+  font-size: 2.4rem;
   font-weight: 700;
   justify-content: center;
   align-items: center;
@@ -504,7 +501,7 @@ body {
   will-change: left;
 }
 .applicationText {
-  font-size: 2.40rem;
+  font-size: 2.4rem;
   font-weight: 500;
   line-height: 120%;
   letter-spacing: 0%;
@@ -1863,4 +1860,7 @@ input {
 .popupWindow.open {
   transform: scale(1);
   opacity: 1;
+}
+html {
+  font-size: clamp(0px, 0.75vw, 11.68px);
 }

@@ -41,52 +41,52 @@ export default function Footer() {
         <span className="footerLogoText">2010-2025 © KitayDavay.ru</span>
       </div>
       <div className="footerGroup">
-        <div className="footerNav">
-          <Link
-            href="#why-us"
-            className="footerNavItem"
-            data-text="Почему мы?"
-            onClick={(e) => scrollToSection(e, "why-us")}
-          >
-            Почему мы?
-          </Link>
-          <Link
-            href="#advantages"
-            className="footerNavItem"
-            data-text="Преимущества"
-            onClick={(e) => scrollToSection(e, "advantages")}
-          >
-            Преимущества
-          </Link>
-          <Link
-            href="#calculator"
-            className="footerNavItem"
-            data-text="Расчет"
-            onClick={(e) => scrollToSection(e, "calculator")}
-          >
-            Расчет
-          </Link>
-          <Link
-            href="#contacts"
-            className="footerNavItem"
-            data-text="Контакты"
-            onClick={(e) => scrollToSection(e, "contacts")}
-          >
-            Контакты
-          </Link>
-        </div>
-        <div className="footerInfo">
-          <span>Электронная почта:</span>
-          <a href="mailto:info@kitaydavay.ru">info@kitaydavay.ru</a>
-          <span>Телефон:</span>
-          <a href="tel:+79252887582">+7 (925) 288-75-82</a>
-        </div>
-        <div className="footerSocialNetworks">
-          <span>Наши соцсети:</span>
-          <div className="footerSocialNetworksIcons">
-            <VkIcon />
-            <WhatsappIcon />
-            <ThemeIcon />
+      <div className="footerNav">
+        <Link
+          href="#why-us"
+          className="footerNavItem"
+          data-text="Почему мы?"
+          onClick={(e) => scrollToSection(e, "why-us")}
+        >
+          Почему мы?
+        </Link>
+        <Link
+          href="#advantages"
+          className="footerNavItem"
+          data-text="Преимущества"
+          onClick={(e) => scrollToSection(e, "advantages")}
+        >
+          Преимущества
+        </Link>
+        <Link
+          href="#calculator"
+          className="footerNavItem"
+          data-text="Расчет"
+          onClick={(e) => scrollToSection(e, "calculator")}
+        >
+          Расчет
+        </Link>
+        <Link
+          href="#contacts"
+          className="footerNavItem"
+          data-text="Контакты"
+          onClick={(e) => scrollToSection(e, "contacts")}
+        >
+          Контакты
+        </Link>
+      </div>
+      <div className="footerInfo">
+        <span>Электронная почта:</span>
+        <a href="mailto:info@kitaydavay.ru">info@kitaydavay.ru</a>
+        <span>Телефон:</span>
+        <a href="tel:+79252887582">+7 (925) 288-75-82</a>
+      </div>
+      <div className="footerSocialNetworks">
+        <span>Наши соцсети:</span>
+        <div className="footerSocialNetworksIcons">
+          <VkIcon />
+          <WhatsappIcon />
+          <ThemeIcon />
           </div>
         </div>
       </div>

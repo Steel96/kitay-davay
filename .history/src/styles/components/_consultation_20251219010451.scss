@@ -1,0 +1,204 @@
+.consultationCont {
+  display: flex;
+  margin-top: 10.27rem;
+  padding: 0 6.85rem;
+  gap: 4.62rem;
+}
+
+.consultationContMain {
+  gap: 0.86rem;
+  display: flex;
+  align-items: center;
+}
+
+.consultationContText {
+  display: flex;
+  flex-direction: column;
+  gap: 2.23rem;
+}
+
+.consultationContTextUp {
+  font-size: 2.74rem;
+  font-weight: 700;
+  width: 36.73rem;
+  margin: 0;
+}
+
+.consultationContTextMain {
+  font-size: 1.37rem;
+  font-weight: 700;
+}
+
+.consultationForm {
+  margin-top: 2.23rem;
+  gap: 1.71rem;
+}
+.plusIcon {
+  width: 24px;
+  height: 24px;
+}
+.consultationBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffffbf;
+  width: 13.7rem;
+  height: 2.56849315068rem;
+  border-radius: 10px;
+  border-width: 0.25px 2px;
+  border-color: black;
+  border-style: solid;
+  font-size: 1.2rem;
+  font-family: "Montserrat";
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.consultationBtn::before {
+  content: "";
+  position: absolute;
+  width: 1.28rem;
+  height: 200%;
+  background: rgba(135, 206, 250, 0.85);
+  transform: rotate(45deg);
+  left: -100%;
+  top: -50%;
+  transition: left 0.6s ease-in-out 0s;
+  z-index: 1;
+}
+
+.consultationBtn:hover::before {
+  left: 150%;
+}
+
+.inputBox {
+  display: flex;
+  flex-direction: column;
+  gap: 1.71rem;
+}
+
+input {
+  border: none;
+  outline: none;
+  font-size: 1.37rem;
+  color: rgba(153, 153, 153, 1);
+  padding: 0.86rem 0.86rem;
+  width: 15.41rem;
+  font-weight: 400;
+  background: none;
+  border-bottom: 1px solid #999;
+  position: relative;
+  z-index: 2;
+
+  &:focus {
+    border-bottom: 1px solid transparent;
+  }
+}
+
+.line {
+  width: 17.12rem;
+  height: 0;
+  border: 0.5px solid;
+  border-color: rgba(0, 0, 0, 1);
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.inputLabel {
+  position: absolute;
+  left: 0.86rem;
+  top: 0.86rem;
+  font-size: 1.37rem;
+  color: rgba(153, 153, 153, 1);
+  font-weight: 400;
+  pointer-events: none;
+  display: flex;
+  z-index: 1;
+  transition: font-size 0.3s ease, color 0.3s ease;
+
+  .letter {
+    display: inline-block;
+    opacity: 1;
+    transform: translateY(0);
+    animation: none;
+    color: inherit;
+  }
+
+  &.focused {
+    top: 0.86rem;
+    font-size: 1.2rem;
+    color: rgba(153, 153, 153, 0.8);
+
+    .letter {
+      animation: letterUp 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+    }
+  }
+}
+
+.inputLine {
+  position: absolute;
+  bottom: 0;
+  left: calc(0.86rem + 7.71rem);
+  width: 0;
+  height: 0.17rem;
+  background-color: #0066ff;
+  transform-origin: left;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &.active {
+    left: 0.86rem;
+    width: 15.41rem;
+  }
+}
+@media (max-width: 375px) {
+  .consultationCont {
+    width: 335px;
+    padding: 0 20px;
+    margin-top: 60px;
+    gap: 25px;
+    height: auto;
+    flex-direction: column;
+  }
+  .consultationContTextMain {
+    font-size: 12px;
+  }
+  .consultationContTextUp {
+    font-size: 24px;
+    width: 335px;
+  }
+  .consultationContMain {
+    font-size: 14px;
+    gap: 12px;
+  }
+  .consultationContImg {
+    width: 325px;
+    height: 195px;
+  }
+  .plusIcon {
+    width: 24px !important;
+    height: 24px !important;
+  }
+  .inputBox {
+    gap: 20px;
+  }
+  .input#name {
+    padding: 0 0 10px 0;
+  }
+  .consultationBtn {
+    width: 120px;
+    height: 25px;
+    border-radius: 5.5px;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: "Montserrat", sans-serif;
+    border-width: 0.25px 2px 0.25px 2px !important;
+    border-style: solid !important;
+    border-color: rgba(0, 0, 0, 1) !important;
+  }
+}

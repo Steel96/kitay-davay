@@ -1,0 +1,267 @@
+.popUpFormWrapper {
+  .popupOverlay {
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    -webkit-backdrop-filter: blur(0px);
+    backdrop-filter: blur(0px);
+    background: rgba(0, 0, 0, 0);
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    z-index: 10000001 !important;
+    padding: 0 20px;
+    box-sizing: border-box;
+    margin: 0 !important;
+    opacity: 0;
+    pointer-events: none;
+    will-change: opacity, background, backdrop-filter;
+    transition: background 1s cubic-bezier(0.16, 1, 0.3, 1),
+      opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
+      -webkit-backdrop-filter 1s cubic-bezier(0.16, 1, 0.3, 1),
+      backdrop-filter 1s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .popupOverlay.open {
+    background: rgba(0, 0, 0, 0.5);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .popupOverlay.close {
+    background: rgba(0, 0, 0, 0);
+    -webkit-backdrop-filter: blur(0px);
+    backdrop-filter: blur(0px);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .popupWindow {
+    width: 400px;
+    height: 322px;
+    background: white;
+    border-radius: 22px;
+    position: relative;
+    padding: 30px 50px;
+    box-sizing: border-box;
+    max-width: calc(100% - 40px);
+    transform: scale(0.9);
+    opacity: 0;
+    will-change: transform, opacity;
+    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .popupWindow.open {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  .popupWindow.close {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+
+  .popupClose {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    background: none;
+    border: none;
+    font-size: 26px;
+    cursor: pointer;
+    color: #7d7d7d;
+    transition: 0.2s;
+  }
+
+  .popupClose:hover {
+    color: #000;
+  }
+
+  .popupContent {
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+  }
+
+  .popupForm {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .popupTitle {
+    margin: 0;
+    font-size: 24px;
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.3;
+    width: 100%;
+    align-self: center;
+  }
+
+  .inputGroup {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .inputLabel {
+    position: absolute;
+    left: 0;
+    top: 8px;
+    font-size: 16px;
+    color: rgba(153, 153, 153, 1);
+    font-weight: 400;
+    pointer-events: none;
+    display: flex;
+    z-index: 1;
+    transition: font-size 0.3s ease, color 0.3s ease;
+  }
+
+  .inputLabel .letter {
+    display: inline-block;
+    opacity: 1;
+    transform: translateY(0);
+    animation: none;
+    color: inherit;
+  }
+
+  .inputLabel.focused {
+    top: 8px;
+    font-size: 14px;
+    color: rgba(153, 153, 153, 0.8);
+  }
+
+  .inputLabel.focused .letter {
+    animation: letterUp 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+  }
+
+  @keyframes letterUp {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+      color: rgba(153, 153, 153, 1);
+    }
+    100% {
+      transform: translateY(-18px);
+      opacity: 0.9;
+      color: #0066ff;
+    }
+  }
+
+  .popupForm input {
+    width: 100%;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #c8c8c8;
+    font-size: 16px;
+    position: relative;
+    z-index: 2;
+    padding: 8px 0;
+    box-sizing: border-box;
+  }
+
+  .popupForm input:focus {
+    border-bottom: 1px solid transparent;
+  }
+
+  .inputLine {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #0066ff;
+    transform-origin: left;
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .inputLine.active {
+    width: 100%;
+  }
+
+  .popupSubmit {
+    margin-top: 10px;
+    align-self: center;
+    width: 150px;
+    height: 36px;
+    background: white;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 2px 0 #000, -2px 0 #000, 0 0.25px #000, 0 -0.25px #000;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.2s;
+  }
+
+  .popupSubmit:hover {
+    transform: scale(1.03);
+  }
+
+  @media (max-width: 375px) {
+    .popupWindow {
+      width: 250px !important;
+      height: 219px !important;
+      padding: 15px 25px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: flex-start !important;
+      align-items: stretch !important;
+    }
+
+    .popupClose {
+      top: 12px !important;
+      right: 12px !important;
+      padding: 0 !important;
+    }
+
+    .popupContent {
+      margin-top: 0 !important;
+    }
+
+    .popupForm {
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+      flex: 1 1 auto !important;
+      min-height: 0 !important;
+      overflow: visible !important;
+      gap: 18px !important;
+    }
+
+    .popupTitle {
+      margin-bottom: 0 !important;
+      flex-shrink: 0 !important;
+      font-size: 16px !important;
+    }
+
+    .inputLabel {
+      font-size: 10px !important;
+      padding: 0 0 0 5px !important;
+    }
+
+    .popupForm input {
+      padding: 10px 10px 10px 5px !important;
+      font-size: 14px !important;
+    }
+
+    .popupSubmit {
+      margin-top: auto !important;
+      width: 96.27px !important;
+      height: 35px !important;
+      border-radius: 5px !important;
+      border: none !important;
+      font-size: 10px !important;
+      font-family: "Montserrat" !important;
+      box-shadow: 2px 0 #000, -2px 0 #000, 0 0.25px #000, 0 -0.25px #000 !important;
+      flex-shrink: 0 !important;
+    }
+  }
+}
