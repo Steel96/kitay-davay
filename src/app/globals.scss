@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 
+/* Глобальный сброс margin для всех элементов */
+* {
+  margin: 0;
+}
+
 @import "../styles/variables";
 @import "../styles/animations";
 
@@ -26,6 +31,29 @@ html {
 
 :root {
   font-family: "Montserrat";
+  /* Light theme colors */
+  --bg-primary: rgba(242, 242, 242, 1);
+  --bg-secondary: rgba(255, 255, 255, 1);
+  --bg-button: rgba(255, 255, 255, 0.75);
+  --bg-light: rgba(242, 242, 242, 1);
+  --text-primary: rgba(0, 0, 0, 1);
+  --text-secondary: rgba(153, 153, 153, 1);
+  --accent-yellow: rgba(242, 189, 0, 1);
+  --accent-blue: rgba(0, 133, 209, 1);
+  --border-color: rgba(153, 153, 153, 1);
+}
+
+.dark-theme {
+  /* Dark theme colors */
+  --bg-primary: rgba(0, 0, 0, 1);
+  --bg-secondary: rgba(20, 20, 20, 1);
+  --bg-button: rgba(30, 30, 30, 0.75);
+  --bg-light: rgba(40, 40, 40, 1);
+  --text-primary: rgba(255, 255, 255, 1);
+  --text-secondary: rgba(200, 200, 200, 1);
+  --accent-yellow: rgba(242, 189, 0, 1);
+  --accent-blue: rgba(0, 133, 209, 1);
+  --border-color: rgba(100, 100, 100, 1);
 }
 
 body {
@@ -33,11 +61,13 @@ body {
   font-weight: 600;
   font-style: SemiBold;
   font-size: 1.2rem;
-  background-color: rgba(242, 242, 242, 1);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   margin: 0;
   overflow-x: hidden;
   overflow-y: auto;
   position: relative;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Гарантия что хедер всегда виден - для всех экранов */
@@ -53,8 +83,8 @@ body {
   opacity: 1 !important;
   pointer-events: auto !important;
   transform: translateY(0) !important;
-  background: rgba(255, 255, 255, 1) !important;
-  transition: none !important;
+  background: var(--bg-secondary) !important;
+  transition: background-color 0.3s ease !important;
   animation: none !important;
   will-change: auto !important;
 }
@@ -62,7 +92,8 @@ body {
 /* Понижаем z-index хедера когда popup открыт, чтобы backdrop-filter overlay работал */
 body.popup-open .head {
   z-index: 10000000 !important;
-  background: rgba(255, 255, 255, 0.95) !important;
+  background: var(--bg-secondary) !important;
+  opacity: 0.95 !important;
 }
 
 /* Дополнительная гарантия для мобильных */
@@ -80,8 +111,8 @@ body.popup-open .head {
     opacity: 1 !important;
     pointer-events: auto !important;
     transform: translateY(0) !important;
-    background: rgba(255, 255, 255, 1) !important;
-    transition: none !important;
+    background: var(--bg-secondary) !important;
+    transition: background-color 0.3s ease !important;
     animation: none !important;
     will-change: auto !important;
   }
@@ -89,5 +120,6 @@ body.popup-open .head {
   /* Понижаем z-index хедера когда popup открыт на мобильных */
   body.popup-open .head {
     z-index: 10000000 !important;
+    opacity: 0.95 !important;
   }
 }

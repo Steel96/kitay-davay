@@ -5,6 +5,8 @@
   padding: 0 6.85rem;
   gap: 4.62rem;
   box-sizing: border-box;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
 }
 
 .consultationContMain {
@@ -13,22 +15,20 @@
   align-items: center;
 }
 
-.consultationContText {
-  display: flex;
-  flex-direction: column;
-  gap: 2.23rem;
-}
-
 .consultationContTextUp {
   font-size: 2.74rem;
   font-weight: 700;
   width: 36.73rem;
   margin: 0;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
 }
 
 .consultationContTextMain {
   font-size: 1.37rem;
   font-weight: 700;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
 }
 
 .consultationForm {
@@ -43,12 +43,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #ffffffbf;
+  background: var(--bg-button);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
   width: 13.7rem;
   height: 2.56849315068rem;
   border-radius: 10px;
   border-width: 0.25px 2px;
-  border-color: black;
+  border-color: var(--text-primary);
   border-style: solid;
   font-size: 1.2rem;
   font-family: "Montserrat";
@@ -85,7 +87,8 @@ input {
   border: none;
   outline: none;
   font-size: 1.37rem;
-  color: rgba(153, 153, 153, 1);
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
   padding: 0.86rem 0.86rem;
   width: 15.41rem;
   font-weight: 400;
@@ -117,7 +120,8 @@ input {
   left: 0.86rem;
   top: 0.86rem;
   font-size: 1.37rem;
-  color: rgba(153, 153, 153, 1);
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
   font-weight: 400;
   pointer-events: none;
   display: flex;
@@ -149,7 +153,8 @@ input {
   left: calc(0.86rem + 7.71rem);
   width: 0;
   height: 0.17rem;
-  background-color: #0066ff;
+  background-color: var(--accent-blue);
+  transition: background-color 0.3s ease;
   transform-origin: left;
   transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -158,21 +163,34 @@ input {
     width: 15.41rem;
   }
 }
+.consultationContVisible {
+  display: flex;
+  flex-direction: column;
+  gap: 2.23rem;
+}
+
 @media (max-width: 850px) {
   .consultationCont {
-    width: 335px;
+    width: 100%;
+    box-sizing: border-box;
     padding: 0 20px;
     margin-top: 60px;
     gap: 25px;
     height: auto;
     flex-direction: column;
   }
+  .consultationContVisible {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
   .consultationContTextMain {
     font-size: 12px;
   }
   .consultationContTextUp {
     font-size: 24px;
-    width: 335px;
+    width: 100%;
+    box-sizing: border-box;
   }
   .consultationContMain {
     font-size: 14px;
@@ -180,6 +198,7 @@ input {
   }
   .consultationContImg {
     width: 325px;
+    box-sizing: border-box;
     height: 195px;
   }
   .plusIcon {
@@ -190,14 +209,58 @@ input {
     gap: 20px;
   }
   .consultationBtn {
-    width: 120px;
-    height: 25px;
+    width: 90px;
+    height: 30px;
     border-radius: 5.5px;
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 600;
     font-family: "Montserrat", sans-serif;
     border-width: 0.25px 2px 0.25px 2px !important;
     border-style: solid !important;
     border-color: rgba(0, 0, 0, 1) !important;
+    box-sizing: border-box;
+  }
+  input#name,
+  input#phone {
+    height: auto;
+    padding: 10px 10px 10px 5px;
+    width: 200px;
+    min-width: 50px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .inputLabel {
+    left: 5px;
+    bottom: 10px;
+    font-size: 12px;
+    &.focused {
+      top: -5px;
+      font-size: 10px;
+      left: 5px;
+      .letter {
+        animation: letterUpMobile 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55)
+          forwards;
+      }
+    }
+  }
+  @keyframes letterUpMobile {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+      color: var(--text-secondary);
+      transition: color 0.3s ease;
+    }
+    100% {
+      transform: translateY(-8px);
+      opacity: 0.9;
+      color: #0066ff;
+    }
+  }
+  .inputLine {
+    left: 5px;
+    &.active {
+      left: 5px;
+      width: calc(200px - 15px);
+    }
   }
 }

@@ -2,18 +2,20 @@
   display: flex;
   width: 100%;
   height: 18.84rem;
-  background: linear-gradient(
-    90deg,
-    rgb(242, 190, 0.1) 0%,
-    rgba(255, 218, 88, 0.1) 200%
-  );
+  background: rgba(242, 189, 0, 0.6);
   flex-direction: column;
   padding: 0 6.85rem;
   margin-top: 10.27rem;
   justify-content: center;
   position: relative;
   box-sizing: border-box;
+  transition: background 0.3s ease;
 }
+
+.dark-theme .calculatorCont {
+  background: rgba(242, 189, 0, 0.6);
+}
+
 .calculatorText {
   display: flex;
   flex-direction: column;
@@ -21,27 +23,31 @@
   width: 800px;
 }
 .calculatorContTextUp {
-  font-size: 4.11rem;
+  font-size: 4.11rem; /* 48px / 11.68 = 4.11rem */
   font-weight: 700;
-  color: rgba(0, 0, 0, 1);
+  color: var(--text-primary);
+  transition: color 0.3s ease;
 }
 
 .calculatorContTextDown {
-  font-size: 2.74rem;
+  font-size: 2.74rem; /* 32px / 11.68 = 2.74rem */
   font-weight: 500;
-  color: rgba(0, 0, 0, 1);
+  color: var(--text-primary);
+  transition: color 0.3s ease;
 }
 
 .calculatorContBtn {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #ffffffbf;
+  background: var(--bg-button);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
   width: 13.0993150685rem;
   height: 4.28rem;
   border-radius: 10px;
   border-width: 0.25px 2px;
-  border-color: black;
+  border-color: var(--text-primary);
   border-style: solid;
   font-size: 1.19863013699rem;
   font-weight: 600;
@@ -72,17 +78,20 @@
 }
 @media (max-width: 850px) {
   .calculatorCont {
-    width: 335px;
-    height: 90px;
+    width: 100%;
+    box-sizing: border-box;
+    height: 150px;
     padding: 30px 20px;
     margin-top: 60px;
     position: relative;
   }
   .calculatorText {
     gap: 15px;
-    width: 240px;
+    width: 100%;
+    box-sizing: border-box;
   }
   .calculatorContTextUp {
+    width: 240px;
     font-size: 20px;
     padding: 0;
   }
@@ -99,7 +108,7 @@
     border-radius: 5px;
     border-width: 0.25px 2px 0.25px 2px !important;
     border-style: solid !important;
-    border-color: rgba(0, 0, 0, 1) !important;
+    border-color: var(--text-primary) !important;
     top: 50%;
     transform: translateY(-50%);
     right: 20px;

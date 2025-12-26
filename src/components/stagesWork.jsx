@@ -71,7 +71,7 @@ export default function Stages() {
             </span>
           </div>
           <p className="applicationText">
-            Вы оставляете заявку или <br /> звоните по телефону <br />
+            Вы оставляете заявку или звоните по телефону
             <span className="phone"> 8 (925) 288-75-82</span>
           </p>
         </div>

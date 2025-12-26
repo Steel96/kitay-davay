@@ -2,14 +2,18 @@
 
 import LogoIcon from "../../public/svg/logoIcon";
 import ThemeIcon from "../../public/svg/themeIcon";
+import SunIcon from "../../public/svg/sunIcon";
 import PhoneCallIcon from "../../public/svg/phoneCallIcon";
+import PhoneCallIconDark from "../../public/svg/phoneCallIconDark";
 import Link from "next/link";
 import PopUpForm from "./popUpForm";
 import { useState, useEffect } from "react";
+import { useTheme } from "../contexts/ThemeContext";
 
 export default function Header() {
   const [open, setOpen] = useState(false); // ← добавлено
   const [popupOpen, setPopupOpen] = useState(false);
+  const { isDark, toggleTheme } = useTheme();
 
   useEffect(() => {
     const checkPopupOpen = () => {
@@ -57,7 +61,7 @@ export default function Header() {
 
   return (
     <div
-      className="head"
+      className={`head ${popupOpen ? "popup-open-header" : ""}`}
       style={{
         position: "fixed",
         top: 0,
@@ -68,14 +72,11 @@ export default function Header() {
         zIndex: popupOpen ? 10000000 : 99999999,
         display: "flex",
         visibility: "visible",
-        opacity: 1,
-        background: popupOpen
-          ? "rgba(255, 255, 255, 0.95)"
-          : "rgba(255, 255, 255, 1)",
+        opacity: popupOpen ? 0.95 : 1,
         pointerEvents: "auto",
         transform: "translateY(0)",
         margin: 0,
-        transition: "none",
+        transition: "background-color 0.3s ease",
         animation: "none",
       }}
     >
@@ -119,11 +120,13 @@ export default function Header() {
       </div>
 
       <div className="navRight">
-        <ThemeIcon />
+        <div onClick={toggleTheme} style={{ cursor: "pointer" }}>
+          {isDark ? <SunIcon /> : <ThemeIcon />}
+        </div>
 
         <a href="tel:+79252887582" className="phoneCallBtn">
           <span>8 (925) 288-75-82</span>
-          <PhoneCallIcon />
+          {isDark ? <PhoneCallIconDark className="phoneCall" /> : <PhoneCallIcon className="phoneCall" />}
         </a>
 
         {/* Открываем поп-ап по клику */}

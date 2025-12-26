@@ -10,12 +10,13 @@
 
 .priceText {
   font-size: 4.11rem;
-  color: #f2bd00;
+  color: var(--accent-yellow);
   justify-content: flex-start;
   align-items: center;
   padding: 6.59rem 0;
   width: 16.8664383562rem;
   line-height: 4.1rem;
+  transition: color 0.3s ease;
 }
 
 .deliveryCards {
@@ -28,15 +29,22 @@
   display: flex;
   flex-shrink: 0;
   align-items: center;
-  background: #0085d133;
+  background: rgba(0, 133, 209, 0.2);
+  transition: background-color 0.3s ease;
   width: 34.25rem;
   height: 19.6rem;
   border-radius: 20px;
   box-shadow: 0 0 4.28rem rgba(0, 133, 209, 0.35);
+  transition: box-shadow 0.3s ease;
   flex-direction: column;
   font-weight: 400;
   font-size: 1.37rem;
   padding: 1.71rem 0 0 0;
+}
+
+.dark-theme .airDelivery {
+  background: rgba(0, 133, 209, 0.6);
+  box-shadow: 0 0 5.5rem rgba(0, 133, 209, 0.6);
 }
 
 .textAvia {
@@ -65,15 +73,22 @@
   display: flex;
   flex-shrink: 0;
   align-items: center;
-  background-color: rgba(242, 190, 0, 0.2);
+  background-color: rgba(242, 189, 0, 0.2);
+  transition: background-color 0.3s ease;
   width: 34.25rem;
   height: 19.6rem;
   border-radius: 20px;
   box-shadow: 0 0 4.28rem rgba(242, 189, 0, 0.35);
+  transition: box-shadow 0.3s ease;
   flex-direction: column;
   font-weight: 400;
   font-size: 1.37rem;
   padding: 1.71rem 0 0 0;
+}
+
+.dark-theme .carDelivery {
+  background-color: rgba(242, 189, 0, 0.6);
+  box-shadow: 0 0 5.5rem rgba(242, 189, 0, 0.6);
 }
 
 .carDelivery img {
@@ -102,7 +117,8 @@
 @media (max-width: 850px) {
   .prices {
     display: flex;
-    width: 335px;
+    width: 100%;
+    box-sizing: border-box;
     height: 174px;
     padding: 0 20px;
     margin-top: 60px;
@@ -110,12 +126,17 @@
     gap: 30px;
   }
   .priceText {
-    font-size: 24px;
+    font-size: 32px;
     padding: 0;
+    width: 100%;
   }
   .airDelivery {
     width: 160px;
-    height: 108px;
+    flex-shrink: 1;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 400px;
+    height: 120px;
     gap: 10px;
     padding: 10px 0 12px 0;
   }
@@ -127,7 +148,11 @@
   }
   .carDelivery {
     width: 160px;
-    height: 108px;
+    flex-shrink: 1;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 400px;
+    height: 120px;
     gap: 10px;
     padding: 10px 0 12px 0;
   }
@@ -135,6 +160,8 @@
     display: flex;
     gap: 13px;
     justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
   }
   .airDelivery .plane,
   .airDelivery .plane svg,

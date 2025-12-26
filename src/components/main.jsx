@@ -75,7 +75,7 @@ export default function Main() {
         width={1500}
         height={1500}
         style={{
-          transform: `translate(calc(-50% + ${translateX}rem), ${translateY}rem)`,
+          transform: `translate(${translateX}rem, ${translateY}rem)`,
           transition: "transform 0.1s ease-out",
         }}
       />

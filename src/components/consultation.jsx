@@ -88,16 +88,14 @@ export default function Consultation() {
         }}
       />
       <div className="consultationContVisible">
-        <div className="consultationContText">
-          <h2 className="consultationContTextUp">
-            Получите консультацию бесплатно
-          </h2>
-          <div className="consultationContMain">
-            <PlusIcon />
-            <span className="consultationContTextMain">
-              Cписок из 100 проверенных поставщиков в Китае
-            </span>
-          </div>
+        <h2 className="consultationContTextUp">
+          Получите консультацию бесплатно
+        </h2>
+        <div className="consultationContMain">
+          <PlusIcon />
+          <span className="consultationContTextMain">
+            Cписок из 100 проверенных поставщиков в Китае
+          </span>
         </div>
         <div className="consultationForm">
           <div className="inputBox">

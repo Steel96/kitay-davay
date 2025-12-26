@@ -7,6 +7,8 @@
   padding: 0 6.85rem;
   flex-direction: column;
   box-sizing: border-box;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
 }
 
 .stillThinkingText {
@@ -14,6 +16,8 @@
   font-weight: 700;
   width: 109.59rem;
   margin-bottom: 1.7rem;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
 }
 
 .brainIcon,
@@ -103,7 +107,8 @@
   }
   .stillThinkingText {
     font-size: 24px;
-    width: 335px;
+    width: 100%;
+    box-sizing: border-box;
   }
   .brainIcon,
   .boxIcon,
@@ -112,7 +117,8 @@
     height: 37px;
   }
   .stillThinkingTextLCR {
-    width: 335px;
+    width: 100%;
+    box-sizing: border-box;
     gap: 10px;
   }
 

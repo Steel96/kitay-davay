@@ -5,6 +5,8 @@
   flex-direction: column;
   width: 100%;
   box-sizing: border-box;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
 }
 
 .benefitCards {
@@ -23,10 +25,13 @@
   height: 14.38rem;
   border-radius: 20px;
   border-style: solid;
-  border-color: rgba(0, 0, 0, 1);
+  border-color: var(--text-primary);
+  transition: border-color 0.3s ease;
   border-width: 0.25px 2px 0.25px 2px;
   box-sizing: border-box;
-  background: #ffffff;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
   flex-direction: column;
   padding: 2.57rem 2.57rem;
   position: relative;
@@ -46,7 +51,8 @@
 .benefitContNum {
   font-size: 2.74rem;
   font-weight: 600;
-  color: rgba(153, 153, 153, 1);
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
   position: absolute;
   top: 2.57rem;
   right: 2.57rem;
@@ -61,6 +67,11 @@
   color: rgba(0, 0, 0, 1);
   line-height: 1.37rem;
   letter-spacing: 0;
+  transition: color 0.3s ease;
+}
+
+.dark-theme .benefitContText {
+  color: rgba(255, 255, 255, 1);
 }
 
 .benefitText {
@@ -69,6 +80,8 @@
   font-size: 4.11rem;
   font-weight: 600;
   margin-bottom: 5.14rem;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
 }
 @media (max-width: 850px) {
   .benefitCont {
@@ -95,7 +108,8 @@
     height: auto;
     min-height: 145px;
     max-height: 145px;
-    width: 325px;
+    width: 100%;
+    box-sizing: border-box;
 
     position: relative;
   }
@@ -108,13 +122,15 @@
     display: inline-block;
     font-size: 16px;
     font-weight: 600;
-    width: 242px;
+    width: 243px;
+    box-sizing: border-box;
   }
 
   .benefitContNum {
     font-size: 24px;
     font-weight: 600;
-    color: rgba(153, 153, 153, 1);
+    color: var(--text-secondary);
+    transition: color 0.3s ease;
     position: absolute;
     top: 20px;
     right: 20px;

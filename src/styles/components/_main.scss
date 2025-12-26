@@ -6,19 +6,26 @@
     rgba(0, 95, 149, 0.25) 100%
   );
   width: 100%;
-  height: 34.25rem;
+  min-height: 34.25rem;
+  height: auto;
   flex-direction: row;
   align-items: flex-start;
   padding: 6.85rem 6.85rem 0 6.85rem;
   overflow: hidden;
   position: relative;
+  box-sizing: border-box;
+  transition: background 0.3s ease;
+}
+
+.dark-theme .main {
+  background: linear-gradient(90deg, #006ba5, #004770);
 }
 
 .mainContent {
   display: flex;
   flex-direction: column;
   gap: 2.57rem;
-  box-sizing: border-box;
+  height: 34.24rem;
 }
 
 .mainHeader {
@@ -32,14 +39,17 @@
   padding-top: 5.14rem;
   width: 50rem;
   font-family: "Montserrat";
+  color: var(--text-primary);
+  transition: color 0.3s ease;
 }
 
 .mainText {
   display: flex;
   font-size: 1.2rem;
   object-fit: contain;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out, color 0.3s ease;
   font-weight: 500;
+  color: var(--text-primary);
 }
 
 .mainText.fade-out {
@@ -54,12 +64,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #ffffffbf;
+  background: var(--bg-button);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
   width: 13.7rem;
   height: 3rem;
   border-radius: 10px;
   border-width: 0.25px 2px;
-  border-color: black;
+  border-color: var(--text-primary);
   border-style: solid;
   font-size: 1.2rem;
   font-family: "Montserrat";
@@ -89,17 +101,19 @@
 .logisticImg {
   position: absolute;
   top: 0;
-  right: -200px;
+  right: 6.85rem;
   width: 52.4rem;
   height: 52.4rem;
   z-index: 1;
   overflow: hidden;
+  transform-origin: right top;
 }
 @media (max-width: 850px) {
   .main {
     display: flex;
-    width: 335px;
-    height: 250px;
+    width: 100%;
+    box-sizing: border-box;
+    height: 310px;
     padding: 60px 20px 0 20px;
     flex-direction: column;
     align-items: center;
@@ -108,9 +122,11 @@
   }
   .mainHeader {
     font-size: 32px;
-    width: 335px;
+    width: 100%;
+    box-sizing: border-box;
     padding: 16px 0 0 0;
-    color: #f2bd00;
+    color: var(--accent-yellow);
+    transition: color 0.3s ease;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
       1px 1px 0 #000;
   }
@@ -120,13 +136,18 @@
   }
   .moredetailsBtn {
     width: 100px;
-    height: 25px;
-    font-size: 8.75px;
+    height: 25px !important;
+    min-height: 25px !important;
+    max-height: 25px !important;
+    font-size: 10px;
+    line-height: 1 !important;
+    padding: 0 !important;
     font-family: "Montserrat";
     border-width: 0.25px 2px 0.25px 2px !important;
     border-style: solid !important;
     border-color: rgba(0, 0, 0, 1) !important;
     border-radius: 6.25px !important;
+    box-sizing: border-box !important;
   }
   .mainContent {
     gap: 15px;
@@ -137,13 +158,13 @@
   .logisticImg {
     position: absolute;
     top: 60px;
-    left: 50%;
-    width: 100%;
+    right: 20px;
+    width: auto;
     max-width: 300px;
     height: auto;
     z-index: 1;
     display: block;
-    transform: translateX(-50%);
     object-fit: contain;
+    transform-origin: right top;
   }
 }

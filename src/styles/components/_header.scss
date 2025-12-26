@@ -35,7 +35,7 @@
   display: flex !important;
   visibility: visible !important;
   opacity: 1 !important;
-  background: rgba(255, 255, 255, 1) !important;
+  background: var(--bg-secondary) !important;
 
   /* Z-index - самый высокий */
   z-index: 99999999 !important;
@@ -65,7 +65,8 @@
 /* Блюр хедера когда popup открыт - понижаем z-index чтобы backdrop-filter overlay работал */
 body.popup-open .head {
   z-index: 10000000 !important;
-  background: rgba(255, 255, 255, 0.95) !important;
+  background: var(--bg-secondary) !important;
+  opacity: 0.95 !important;
 }
 
 /* То же самое для мобильной версии */
@@ -106,25 +107,25 @@ body.popup-open .head {
   width: 100%;
   white-space: nowrap;
   display: block;
-  top: 50%;
-  transform: translateY(-50%);
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-    top 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   pointer-events: none;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Нижний черный текст */
 .headerBtn a::before {
-  color: #000;
+  color: var(--text-primary);
   z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 /* Верхний синий текст — изначально спрятан ниже */
 .headerBtn a::after {
-  color: #0085d1;
-  top: 150%; /* стартует ниже видимой области */
-  transform: translateY(0);
+  color: var(--accent-blue);
   z-index: 2;
+  top: 50%;
+  transform: translateY(100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s ease;
 }
 
 /* При ховере — черный уходит вверх, синий поднимается */
@@ -133,7 +134,6 @@ body.popup-open .head {
 }
 
 .headerBtn a:hover::after {
-  top: 50%; /* возвращаем наверх */
   transform: translateY(-50%);
 }
 
@@ -171,7 +171,9 @@ body.popup-open .head {
   width: 12.84rem; /* фиксированная ширина */
   height: 3rem;
   padding: 0 0.43rem 0 1.71rem;
-  background-color: #f2f2f2;
+  background-color: var(--bg-light);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
   border-radius: 50px;
   cursor: pointer;
   font-weight: 600;
@@ -210,16 +212,17 @@ body.popup-open .head {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  background: #0085d1;
+  background: var(--accent-blue);
+  transition: background-color 0.3s ease;
   border: none;
   border-radius: 50px;
   font-size: 1.03rem;
-  color: white;
+  color: rgba(255, 255, 255, 1);
   width: 11.13rem;
   height: 3rem;
   cursor: pointer;
   font-weight: 600;
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, color 0.3s ease;
   flex-shrink: 0;
   font-family: "Montserrat", sans-serif;
 }
@@ -227,6 +230,28 @@ body.popup-open .head {
 .contactBtn:hover {
   transform: scale(1.07);
   box-shadow: 0 0.51rem 1.54rem rgba(0, 133, 209, 0.16);
+}
+
+/* Стили для темной темы */
+.dark-theme .phoneCallBtn {
+  background-color: rgba(0, 0, 0, 1);
+}
+
+.dark-theme .phoneCallBtn .phoneCall svg rect {
+  fill: rgba(0, 0, 0, 1) !important;
+}
+
+.dark-theme .phoneCallBtn .phoneCall svg defs linearGradient stop:first-child {
+  stop-color: #0067A2 !important;
+}
+
+.dark-theme .phoneCallBtn .phoneCall svg defs linearGradient stop:last-child {
+  stop-color: #00A2FF !important;
+}
+
+.dark-theme .contactBtn {
+  background: var(--accent-blue);
+  color: rgba(0, 0, 0, 1);
 }
 
 /* Общие защитные правила для flex-элементов */
@@ -259,7 +284,7 @@ body.popup-open .head {
     display: flex !important;
     visibility: visible !important;
     opacity: 1 !important;
-    background: rgba(255, 255, 255, 1) !important;
+    background: var(--bg-secondary) !important;
 
     /* Z-index - самый высокий */
     z-index: 99999999 !important;

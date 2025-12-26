@@ -43,7 +43,9 @@
   .popupWindow {
     width: 400px;
     height: 322px;
-    background: white;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
     border-radius: 22px;
     position: relative;
     padding: 30px 50px;
@@ -125,7 +127,8 @@
     left: 0;
     top: 8px;
     font-size: 16px;
-    color: rgba(153, 153, 153, 1);
+    color: var(--text-secondary);
+    transition: color 0.3s ease;
     font-weight: 400;
     pointer-events: none;
     display: flex;
@@ -155,7 +158,8 @@
     0% {
       transform: translateY(0);
       opacity: 1;
-      color: rgba(153, 153, 153, 1);
+      color: var(--text-secondary);
+      transition: color 0.3s ease;
     }
     100% {
       transform: translateY(-18px);
@@ -168,7 +172,10 @@
     width: 100%;
     border: none;
     outline: none;
-    border-bottom: 1px solid #c8c8c8;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-primary);
+    background: transparent;
+    transition: border-color 0.3s ease, color 0.3s ease;
     font-size: 16px;
     position: relative;
     z-index: 2;
@@ -186,7 +193,8 @@
     left: 0;
     width: 0;
     height: 2px;
-    background-color: #0066ff;
+    background-color: var(--accent-blue);
+    transition: background-color 0.3s ease;
     transform-origin: left;
     transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
@@ -200,10 +208,14 @@
     align-self: center;
     width: 150px;
     height: 36px;
-    background: white;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
     border-radius: 8px;
     border: none;
-    box-shadow: 2px 0 #000, -2px 0 #000, 0 0.25px #000, 0 -0.25px #000;
+    box-shadow: 2px 0 var(--text-primary), -2px 0 var(--text-primary),
+      0 0.25px var(--text-primary), 0 -0.25px var(--text-primary);
+    transition: box-shadow 0.3s ease;
     cursor: pointer;
     font-size: 16px;
     font-weight: 600;

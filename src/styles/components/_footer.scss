@@ -6,7 +6,9 @@
   padding: 0 6.85rem;
   font-size: 1.2rem;
   font-weight: 600;
-  background: rgba(255, 255, 255, 1);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
   margin-top: 5.14rem;
   height: 11.99rem;
   box-sizing: border-box;
@@ -56,25 +58,26 @@
   width: 100%;
   white-space: nowrap;
   display: block;
-  top: 50%;
-  transform: translateY(-50%);
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-    top 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   pointer-events: none;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Нижний черный текст */
 .footerNavItem::before {
-  color: #000;
+  color: var(--text-primary);
   z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s ease;
 }
 
 /* Верхний синий текст — изначально спрятан ниже */
 .footerNavItem::after {
-  color: #0085d1;
-  top: 150%;
-  transform: translateY(0);
+  color: var(--accent-blue);
   z-index: 2;
+  top: 50%;
+  transform: translateY(100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s ease;
 }
 
 /* При ховере — черный уходит вверх, синий поднимается */
@@ -83,7 +86,6 @@
 }
 
 .footerNavItem:hover::after {
-  top: 50%;
   transform: translateY(-50%);
 }
 
@@ -96,7 +98,8 @@
 }
 
 .footerInfo span {
-  color: rgba(153, 153, 153, 1);
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
 }
 
 .footerInfo a {
@@ -136,7 +139,9 @@
   width: 11.56rem;
   height: 3rem;
   align-items: center;
-  background-color: #f2f2f2;
+  background-color: var(--bg-light);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
   border-radius: 50px;
   cursor: pointer;
   font-weight: 600;
@@ -157,7 +162,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  color: rgba(0, 0, 0, 1);
+  color: var(--text-primary);
   text-decoration: none;
   gap: 0.86rem;
   justify-content: end;
@@ -175,7 +180,8 @@
   .footer {
     display: flex;
     flex-direction: column;
-    width: 335px;
+    width: 100%;
+    box-sizing: border-box;
     height: 380px;
     padding: 0 20px;
     gap: 20px;
@@ -192,6 +198,10 @@
     gap: 10px;
     width: 105px;
   }
+  .footerNavItem {
+    font-size: 14px;
+    font-weight: 600;
+  }
   .footerInfo {
     font-size: 14px;
     gap: 10px;
@@ -200,11 +210,54 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
+    align-self: start;
   }
   .contactsBtn {
     width: 110px;
     height: 40px;
-
+    min-height: 40px;
     font-size: 14px;
+  }
+  .tenzorix {
+    width: 150px;
+    height: 40px;
+  }
+  .footerInteractText {
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .phoneCallBtnFooter {
+    width: auto;
+    height: 35px;
+    font-size: 12px;
+    font-weight: 600;
+    gap: 5px;
+    padding: 0 5px 0 10px;
+  }
+  .phoneCall {
+    width: 24px !important;
+    height: 24px !important;
+    display: block !important;
+    flex-shrink: 0 !important;
+    min-width: 24px !important;
+    min-height: 24px !important;
+  }
+  .footerSocialNetworks span {
+    font-size: 14px;
+  }
+  .footerSocialNetworks {
+    gap: 10px;
+  }
+  .footerRight {
+    align-self: flex-start;
+    gap: 10px;
+  }
+  .footerRightButtons {
+    display: flex;
+    justify-content: start;
+    gap: 10px;
+  }
+  .footerSocialNetworksIcons {
+    gap: 10px;
   }
 }
